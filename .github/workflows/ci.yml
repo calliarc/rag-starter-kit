@@ -32,8 +32,8 @@ jobs:
     env:
       RAG_TEST_DATABASE_URL: postgresql://rag:rag@localhost:5432/rag
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
           cache: pip
@@ -53,7 +53,7 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Build image
         run: docker build -t rag-starter-kit:ci .
       - name: Smoke test

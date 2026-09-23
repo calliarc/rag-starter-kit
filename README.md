@@ -2,9 +2,10 @@
 
 Production-ready retrieval-augmented generation (RAG) template for chatting with company documents, with evals included.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![CI](https://github.com/calliarc/rag-starter-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/calliarc/rag-starter-kit/actions/workflows/ci.yml)
-![Version: 0.1.0](https://img.shields.io/badge/version-0.1.0-green)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/calliarc/rag-starter-kit?include_prereleases&sort=semver)](https://github.com/calliarc/rag-starter-kit/releases)
+[![Built by CalliArc](https://img.shields.io/badge/built%20by-CalliArc-0a66c2)](https://www.calliarc.com/)
 
 > **Status:** v0.1.0, the first working release. The API and settings may still change before 1.0.
 
@@ -273,6 +274,10 @@ Have an idea? [Open an issue](https://github.com/calliarc/rag-starter-kit/issues
 ## Contributing
 
 Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
