@@ -27,3 +27,10 @@ Thumbs.db
 .vscode/*
 !.vscode/extensions.json
 *.swp
+
+# Local data and eval reports
+data/
+*.db
+*.db-wal
+*.db-shm
+evals/reports/

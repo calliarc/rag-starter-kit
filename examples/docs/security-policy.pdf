@@ -1,0 +1,89 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [4 0 R 6 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Length 1027 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+56 790 Td
+(Fernhill Instruments Information Security Policy) Tj T*
+() Tj T*
+(Sample content for the RAG Starter Kit demo. Fernhill Instruments is a fictional company.) Tj T*
+() Tj T*
+(1. Passwords and authentication) Tj T*
+(All accounts must use a password of at least 14 characters. Passwords are stored in the) Tj T*
+(company password manager and must never be reused across services. Multi-factor) Tj T*
+(authentication is mandatory for email, source code hosting, the cloud console and the) Tj T*
+(Fernhill Portal. Hardware security keys are required for administrators.) Tj T*
+() Tj T*
+(2. Access reviews) Tj T*
+(Team leads review who has access to production systems every quarter. Access for people who) Tj T*
+(leave the company is removed on their last working day.) Tj T*
+() Tj T*
+(3. Laptops and devices) Tj T*
+(Company laptops use full-disk encryption and lock automatically after five minutes of) Tj T*
+(inactivity. Personal devices may only access email through the managed mobile app.) Tj T*
+ET
+endstream
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 3 0 R >>
+endobj
+5 0 obj
+<< /Length 1010 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+56 790 Td
+(4. Incident response) Tj T*
+(Report any suspected security incident to the security team within one hour of discovery,) Tj T*
+(using the #security-incidents channel or the on-call phone number in the IT portal. Do not) Tj T*
+(try to investigate on your own and do not delete evidence.) Tj T*
+() Tj T*
+(Incidents are classified by severity. Severity 1 means customer data is exposed or) Tj T*
+(production is down; the incident commander is paged immediately and customers are informed) Tj T*
+(within 72 hours when their data is affected. Severity 2 covers contained incidents without) Tj T*
+(customer impact.) Tj T*
+() Tj T*
+(5. Data retention) Tj T*
+(Security logs are retained for 400 days. Customer sensor data is kept for five years unless) Tj T*
+(the customer requests earlier deletion. Backups are encrypted and tested for restore every) Tj T*
+(month.) Tj T*
+() Tj T*
+(6. Policy owner) Tj T*
+(This policy is owned by the Head of Security and reviewed once per year.) Tj T*
+ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+8 0 obj
+<< /Title (Information Security Policy) /Producer (rag-starter-kit) >>
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000079 00000 n 
+0000000142 00000 n 
+0000001221 00000 n 
+0000001347 00000 n 
+0000002409 00000 n 
+0000002535 00000 n 
+0000002584 00000 n 
+trailer
+<< /Size 9 /Root 7 0 R /Info 8 0 R >>
+startxref
+2670
+%%EOF

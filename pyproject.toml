@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rag-starter-kit"
+version = "0.1.0"
+description = "Production-ready retrieval-augmented generation (RAG) template with hybrid search, citations, access control and evals."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "CalliArc", email = "hello@calliarc.com" }]
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Framework :: FastAPI",
+]
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+    "pydantic>=2.5",
+    "pydantic-settings>=2.1",
+    "python-multipart>=0.0.9",
+    "httpx>=0.26",
+    "numpy>=1.24",
+    "rank-bm25>=0.2.2",
+    "pypdf>=4.0",
+    "python-docx>=1.1",
+    "beautifulsoup4>=4.12",
+]
+
+[project.optional-dependencies]
+postgres = ["psycopg[binary,pool]>=3.1"]
+dev = ["pytest>=8.0", "ruff>=0.4"]
+
+[project.urls]
+Homepage = "https://www.calliarc.com"
+Repository = "https://github.com/calliarc/rag-starter-kit"
+Issues = "https://github.com/calliarc/rag-starter-kit/issues"
+
+[tool.setuptools.packages.find]
+include = ["rag*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "W"]
+ignore = ["B008", "B905"]

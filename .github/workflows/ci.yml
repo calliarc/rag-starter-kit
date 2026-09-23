@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: rag
+          POSTGRES_PASSWORD: rag
+          POSTGRES_DB: rag
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U rag -d rag"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      RAG_TEST_DATABASE_URL: postgresql://rag:rag@localhost:5432/rag
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install
+        run: pip install -e ".[dev,postgres]"
+      - name: Lint
+        run: |
+          ruff check .
+          ruff format --check .
+      - name: Tests (fake providers, memory/SQLite/pgvector stores)
+        run: pytest
+      - name: Retrieval eval gate
+        run: >
+          python -m rag.evals --dataset evals/datasets/demo.jsonl --docs examples/docs
+          --min-hit-rate 0.9 --min-mrr 0.8 --min-groundedness 0.8
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t rag-starter-kit:ci .
+      - name: Smoke test
+        run: |
+          docker run -d --name rag -p 8000:8000 -e RAG_VECTOR_STORE=memory rag-starter-kit:ci
+          for i in $(seq 1 30); do curl -fsS http://localhost:8000/healthz && break; sleep 1; done
+          curl -fsS http://localhost:8000/healthz
+          docker rm -f rag
